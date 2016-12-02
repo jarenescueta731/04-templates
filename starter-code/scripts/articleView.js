@@ -3,14 +3,10 @@ var articleView = {};
 
 articleView.populateFilters = function() {
   $('article').not('.template').each(function() {
-    // var authorName, category, optionTag;
+    var authorName, category, optionTag;
     authorName = $(this).find('address a').text();
-    // optionTag = '<option value="' + authorName + '">' + authorName + '</option>';
-
-    var $source = $('#author-option-template').html();
-    var templateRender = Handlebars.compile($source);
-    $('#author-filter').append(templateRender(this));
-    // return templateRender(this);
+    optionTag = '<option value="' + authorName + '">' + authorName + '</option>';
+    $('#author-filter').append(optionTag);
 
 
     category = $(this).attr('data-category');
